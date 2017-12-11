@@ -1,0 +1,62 @@
+/*
+Estilos genéricos para sacar los bordes
+*/
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box; 
+}
+
+/*
+Sacando el estilo de lista
+*/
+ul, ol {
+	list-style: none;
+}
+
+/*
+Fuente para toda la pagina
+*/
+body{
+	font-family: 'Roboto', sans-serif;
+}
+
+/*
+Estilos solo para el slideshow
+*/
+.slideshow{
+	width: 100%;
+	position: relative;
+}
+
+
+/*
+Llamamos a las listas para darle el ancho del 100%
+*/
+.slider ul, li{
+	width: 100%;
+}
+
+/*
+Llamamos a la dispositiva, para tambien darle un ancho del 100%
+*/
+.slider ul, img{
+	width: 100%;
+}
+
+/*
+Texto que irá dentro de las imágenes
+*/
+.slider .caption{
+	position: absolute;
+}
+
+.pagination{
+	position: absolute;
+}
+
+.left, .right{
+	position: absolute;
+}
