@@ -86,6 +86,10 @@ Iconos de circulos
 	cursor: pointer;
 }
 
+.pagination:hover{
+	background: ##F5900D;
+}
+
 /*
 Alineación de las flechitas
 */
