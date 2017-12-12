@@ -35,7 +35,7 @@ Estilos solo para el slideshow
 /*
 Llamamos a las listas para darle el ancho del 100%
 */
-.slider ul, li{
+.slider li, ul{
 	width: 100%;
 }
 
@@ -51,12 +51,66 @@ Texto que irá dentro de las imágenes
 */
 .slider .caption{
 	position: absolute;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left: 0;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	z-index: 1;
+	font-size: 50px;
 }
 
+/*
+Iconos de circulos
+*/
 .pagination{
 	position: absolute;
+	top: 102%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 
+.pagination li{
+	font-size: 20px;
+	margin: 2px 5px;
+	color: #858585;
+	cursor: pointer;
+}
+
+/*
+Alineación de las flechitas
+*/
 .left, .right{
 	position: absolute;
+	top: 0;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	color: #fff;
+	font-size: 45px;
+	z-index: 2;
+	cursor: pointer;
+}
+
+/*
+Flechitas
+*/
+.left{
+	left: 10px;
+}
+
+.right{
+	right: 10px;
+}
+
+/*
+Opacidad para las imagenes
+*/
+img{
+	opacity: 0.7;
 }
