@@ -1,6 +1,7 @@
 $(document).ready(function(){
 		//Cuenta diapositivas, mostrando la cantidad de las imágenes
 		var imgItems = $('.slider li').length;
+		var imgPosition = 1;
 		//Este for agrega circulos dependiendo de la cantidad de imagenes
 		//Que se encuentren en las dispositivas
 		for(i=1; i <= imgItems; i++){
@@ -22,6 +23,10 @@ $(document).ready(function(){
 		//Imagen anterior
 		$('.left span').click(prevSlider);
 
+		setInterval(function(){
+			nextSlider();
+		}, 4000);
+
 		//funciones
 		function pagination(){
 			//Llama a la posicion de la paginacion a la que se le da click
@@ -37,14 +42,47 @@ $(document).ready(function(){
 			$('.pagination li').css({'color': '#858585;'});
 			//Al hacer click queda como seleccionado del color dado
 			$(this).css({'color': '#cd6e2e'});
+
+			imgPosition = paginationPos;
 		}
 
 		function nextSlider(){
+
+			//Vuelve a número 1 la imagen seleccionada con la flecha derecha
+			if(imgPosition >= imgItems){
+				imgPosition = 1
+			} else {
+				imgPosition++;
+			}
+
+			$('.pagination li').css({'color': '#858585;'});
+			$('.pagination li:nth-child('+ imgPosition +')').css({'color':'#cd6e2e'});
+			
 			//Esconde las imagenes
 			$('.slider li').hide();
 			// fadeIn=Efecto / paginationPos=numero de la posicion al que 
 			// le hemos dado click
-			$('.slider li:nth-child('')').fadeIn();
+			$('.slider li:nth-child('+ imgPosition +')').fadeIn();
+
+		}
+		//Funcion que muestra la imagen previa
+		function prevSlider(){
+
+			//Vuelve a número 1 la imagen seleccionada con la flecha izquierda
+			if(imgPosition <= 1){
+				imgPosition = imgItems;
+			} else {
+				imgPosition--;
+			}
+
+			$('.pagination li').css({'color': '#858585;'});
+			$('.pagination li:nth-child('+ imgPosition +')').css({'color':'#cd6e2e'});
+			
+			//Esconde las imagenes
+			$('.slider li').hide();
+			// fadeIn=Efecto / paginationPos=numero de la posicion al que 
+			// le hemos dado click
+			$('.slider li:nth-child('+ imgPosition +')').fadeIn();
 
 		}
 

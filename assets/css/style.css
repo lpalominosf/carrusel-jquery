@@ -39,6 +39,10 @@ Llamamos a las listas para darle el ancho del 100%
 	width: 100%;
 }
 
+.slider li{
+	overflow: hidden;
+}
+
 /*
 Llamamos a la dispositiva, para tambien darle un ancho del 100%
 */
@@ -92,7 +96,7 @@ Alineación de las flechitas
 	display: flex;
 	align-items: center;
 	color: #fff;
-	font-size: 45px;
+	font-size: 35px;
 	z-index: 2;
 	cursor: pointer;
 }
@@ -108,9 +112,15 @@ Flechitas
 	right: 10px;
 }
 
-/*
-Opacidad para las imagenes
-*/
-img{
-	opacity: 0.7;
+@media screen and (max-width: 600px){
+	.slider .caption h2{
+		font-size: 35px;
+	}
+	.left .right {
+		font-size: 25px;
+	}
+
+	.slider li img{
+		width: 600px;
+	}
 }
